@@ -38,6 +38,12 @@ describe Account do
       account.debit(12)
       expect(account.transactions.length).to eq 2
     end
+
+    it 'stores more than one transaction' do
+      account.debit(12)
+      account.debit(1)
+      expect(account.transactions[1].current_balance).to eq 18
+    end
   end
 
 end
