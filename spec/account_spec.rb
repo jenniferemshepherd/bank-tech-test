@@ -52,7 +52,7 @@ describe Account do
 
     it 'prints a statement' do
       account.credit(30)
-      expect(account.print_statement).to eq("credit || debit || balance /n 30 || 0 || 30")
+      expect(account.print_statement).to eq("credit || debit || balance\n30 || 0 || 30")
     end
   end
 end

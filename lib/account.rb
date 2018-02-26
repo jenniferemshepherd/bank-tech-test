@@ -20,7 +20,7 @@ class Account
   end
 
   def print_statement
-    output = "credit || debit || balance /n "
+    output = "credit || debit || balance\n"
     @transactions.each do |transaction|
       output += "#{transaction.credit} || #{transaction.debit} || #{transaction.current_balance}"
     end
