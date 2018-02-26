@@ -27,8 +27,19 @@ describe Account do
       account.withdraw(12)
       expect(account.balance).to equal 18
     end
+
+    it 'stores a transaction' do
+      account = Account.new()
+      account.deposit(30)
+      expect(account.transactions).to include({credit: 30, balance: 30})
+    end
+
+    it 'stores a transaction' do
+      account = Account.new()
+      account.deposit(30)
+      account.withdraw(12)
+      expect(account.transactions).to include({debit: 12, balance: 18})
+    end
   end
-
-
 
 end
