@@ -1,3 +1,5 @@
+require_relative 'transaction'
+
 class Account
 
   attr_reader :balance, :transactions
@@ -9,17 +11,21 @@ class Account
 
   def credit(amount)
     @balance += amount
-    create_transaction("credit",amount)
+    create_credit_transaction(amount)
   end
 
   def debit(amount)
     @balance -= amount
-    create_transaction("debit",amount)
+    create_debit_transaction(amount)
   end
 
-private
-  def create_transaction(type,amount)
-    @transactions << Transaction.new(type,amount)
+  private
+  def create_credit_transaction(amount)
+    @transactions << Transaction.new(amount)
+  end
+
+  def create_debit_transaction(amount)
+    @transactions << Transaction.new(-amount)
   end
 
 end

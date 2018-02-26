@@ -2,8 +2,7 @@ class Transaction
 
   attr_reader :type, :amount
 
-  def initialize(type, amount)
-    @type = type
+  def initialize(amount)
     @amount = amount
   end
 end
