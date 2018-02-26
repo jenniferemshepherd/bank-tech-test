@@ -46,4 +46,13 @@ describe Account do
     end
   end
 
+  describe 'printer' do
+    before do
+    end
+
+    it 'prints a statement' do
+      account.credit(30)
+      expect(account.print_statement).to eq("credit || debit || balance /n 30 || 0 || 30")
+    end
+  end
 end

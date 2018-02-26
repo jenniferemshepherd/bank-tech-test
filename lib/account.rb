@@ -19,6 +19,14 @@ class Account
     create_debit_transaction(amount)
   end
 
+  def print_statement
+    output = "credit || debit || balance /n "
+    @transactions.each do |transaction|
+      output += "#{transaction.credit} || #{transaction.debit} || #{transaction.current_balance}"
+    end
+    output
+  end
+
   private
   def create_credit_transaction(amount)
     @transactions << Transaction.new(amount, @balance)
