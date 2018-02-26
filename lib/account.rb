@@ -9,12 +9,17 @@ class Account
 
   def credit(amount)
     @balance += amount
-    @transactions << {credit: amount, balance: @balance}
+    create_transaction("credit",amount)
   end
 
   def debit(amount)
     @balance -= amount
-    @transactions << {debit: amount, balance: @balance}
+    create_transaction("debit",amount)
+  end
+
+private
+  def create_transaction(type,amount)
+    @transactions << Transaction.new(type,amount)
   end
 
 end

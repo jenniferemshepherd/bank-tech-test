@@ -3,7 +3,7 @@ require 'account'
 describe Account do
 
   subject(:account) {described_class.new()}
-    let(:transaction) { double :transaction }
+  let(:transaction) { double :transaction }
 
   describe 'open account' do
     it 'has a balance of zero on creation' do
