@@ -21,3 +21,18 @@ As a user
 So that I don't have to deal with PSQL etc
 I don't want to use a database
 ```
+
+Steps taken
+_____________
+
+1. account with account balance
+2. credit and debit methods
+3. extract transaction to an object
+4. refactor methods
+5. print a statement
+
+still to do:
+* date of transaction
+* method names?
+* spec describes
+* printer
