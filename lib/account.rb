@@ -21,11 +21,11 @@ class Account
 
   private
   def create_credit_transaction(amount)
-    @transactions << Transaction.new(amount)
+    @transactions << Transaction.new(amount, @balance)
   end
 
   def create_debit_transaction(amount)
-    @transactions << Transaction.new(-amount)
+    @transactions << Transaction.new(-amount, @balance)
   end
 
 end
