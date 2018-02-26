@@ -7,12 +7,12 @@ class Account
     @transactions = []
   end
 
-  def deposit(amount)
+  def credit(amount)
     @balance += amount
     @transactions << {credit: amount, balance: @balance}
   end
 
-  def withdraw(amount)
+  def debit(amount)
     @balance -= amount
     @transactions << {debit: amount, balance: @balance}
   end

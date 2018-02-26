@@ -15,29 +15,32 @@ describe Account do
   end
 
   describe 'deposit and withdraw funds' do
+    before do
+    end
+
     it 'receives a deposit and increases balance accordingly' do
       account = Account.new()
-      account.deposit(30)
+      account.credit(30)
       expect(account.balance).to equal 30
     end
 
     it 'accepts a withdrawal and decreases balance accordingly' do
       account = Account.new()
-      account.deposit(30)
-      account.withdraw(12)
+      account.credit(30)
+      account.debit(12)
       expect(account.balance).to equal 18
     end
 
     it 'stores a transaction' do
       account = Account.new()
-      account.deposit(30)
+      account.credit(30)
       expect(account.transactions).to include({credit: 30, balance: 30})
     end
 
     it 'stores a transaction' do
       account = Account.new()
-      account.deposit(30)
-      account.withdraw(12)
+      account.credit(30)
+      account.debit(12)
       expect(account.transactions).to include({debit: 12, balance: 18})
     end
   end
