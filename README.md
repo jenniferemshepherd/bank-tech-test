@@ -20,3 +20,4 @@ I would like to view a statement that prints the date, transaction amount and ba
 As a user
 So that I don't have to deal with PSQL etc
 I don't want to use a database
+```
