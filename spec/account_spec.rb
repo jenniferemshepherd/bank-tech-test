@@ -20,6 +20,15 @@ describe Account do
       account.deposit(30)
       expect(account.balance).to equal 30
     end
+
+    it 'accepts a withdrawal and decreases balance accordingly' do
+      account = Account.new()
+      account.deposit(30)
+      account.withdraw(12)
+      expect(account.balance).to equal 18
+    end
   end
+
+
 
 end
